@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     ProductCategoryAdapter productCategoryAdapter;
     RecyclerView productCatRecycler, prodItemRecycler;
     ProductAdapter productAdapter;
-
+//
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
