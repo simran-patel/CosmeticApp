@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@color/colors"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/face_txt"
+            android:layout_width="50dp"
+            android:layout_height="100dp"
+            android:fontFamily="@font/actor"
+            android:gravity="center"
+            android:rotation="270"
+            android:text="HAIR"
+            android:textColor="#373131"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/hair_txt"
+            app:layout_constraintEnd_toEndOf="@+id/hair_txt"
+            app:layout_constraintHorizontal_bias="0.523"
+            app:layout_constraintStart_toStartOf="@+id/hair_txt" />
+
+        <TextView
+            android:id="@+id/skin_txt"
+            android:layout_width="50dp"
+            android:layout_height="100dp"
+            android:fontFamily="@font/actor"
+            android:gravity="center"
+            android:rotation="270"
+            android:text="HOME"
+
+            android:textColor="#005B1B"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/body_txt"
+            app:layout_constraintEnd_toEndOf="@+id/body_txt"
+            app:layout_constraintHorizontal_bias="0.709"
+            app:layout_constraintStart_toStartOf="@+id/body_txt" />
+
+        <TextView
+            android:id="@+id/body_txt"
+            android:layout_width="50dp"
+            android:layout_height="100dp"
+            android:fontFamily="@font/actor"
+            android:gravity="center"
+            android:rotation="270"
+            android:textColor="#373131"
+            android:text="FACE"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/face_txt"
+            app:layout_constraintEnd_toEndOf="@+id/face_txt"
+            app:layout_constraintHorizontal_bias="0.38"
+            app:layout_constraintStart_toStartOf="@+id/face_txt" />
+        <ImageView
+            android:id="@+id/search_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_search" />
+
+        <TextView
+            android:id="@+id/hair_txt"
+            android:layout_width="50dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="80dp"
+            android:fontFamily="@font/actor"
+            android:gravity="center"
+            android:rotation="270"
+            android:text="MAKE UP"
+            android:textColor="#373131"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/search_view"
+            app:layout_constraintEnd_toEndOf="@+id/search_view"
+            app:layout_constraintStart_toStartOf="@+id/search_view" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/actor"
+        android:text="Pink"
+        android:textColor="@android:color/background_dark"
+        android:textSize="40sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/quote_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/actor"
+        android:text="Let's find your favourate body care product"
+        android:textColor="@android:color/background_dark"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/app_name"
+        app:layout_constraintTop_toBottomOf="@+id/app_name" />
+
+    <ImageView
+        android:id="@+id/profile_img"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/profile" />
+
+    <ImageView
+        android:id="@+id/trending_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
+        app:layout_constraintTop_toBottomOf="@+id/quote_text"
+        app:srcCompat="@drawable/ic_filter" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cat_recycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/trending_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/trending_btn"
+        app:layout_constraintTop_toTopOf="@+id/trending_btn"
+        tools:listitem="@layout/category_row_item" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/product_recycler"
+        android:layout_width="311dp"
+        android:layout_height="458dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/trending_btn"
+        app:layout_constraintTop_toBottomOf="@+id/cat_recycler"
+        tools:listitem="@layout/products_row_item" />
+
+    <Button
+        android:id="@+id/cart_btn"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/cart_button_bg"
+        android:drawableRight="@drawable/ic_cart"
+        android:fontFamily="@font/rubik_medium"
+        android:padding="8dp"
+        android:paddingEnd="24dp"
+        android:text="Your Cart is empty"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
+        app:layout_constraintTop_toBottomOf="@+id/product_recycler"
+        app:layout_constraintVertical_bias="0.829" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
